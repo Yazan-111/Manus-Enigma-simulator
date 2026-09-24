@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rotor Lab — Enigma Emulator</title>
+  <link rel="stylesheet" href="/static/css/app.css">
+</head>
+<body>
+  <header class="masthead"><div class="mark">R</div><div><div class="eyebrow">ROTOR LAB / FIELD NOTE 01</div><h1>Enigma, made visible.</h1></div><div class="header-note">An interactive historical emulator<br><span>Not a cryptographic security tool.</span></div></header>
+  <main>
+    <section class="hero"><div><p class="kicker">From commercial machine to U-boat M4</p><h2>Turn the wheels.<br><em>See the system change.</em></h2><p class="lede">A local, educational reconstruction of the Enigma family. Explore the major stages, inspect the machine in 3D, and test the same reciprocal ciphering behavior used by the original electromechanical designs.</p></div><div class="hero-stat"><strong>3</strong><span>historical stages</span><strong>26</strong><span>contacts per rotor</span></div></section>
+    <section class="timeline-wrap"><div class="section-head"><span>01 / DEVELOPMENT LINE</span><small>Select a stage to reconfigure the model</small></div><div id="timeline" class="timeline"></div></section>
+    <section class="workspace">
+      <div class="panel viewer-panel"><div class="panel-head"><div><span class="label">LIVE OBJECT</span><h3 id="model-name">Wehrmacht Enigma I / M3</h3></div><div class="chip" id="year-chip">1932–1941</div></div><div id="viewport"></div><div class="viewport-help">DRAG to orbit · SCROLL to zoom · the illuminated path is schematic</div></div>
+      <div class="panel controls-panel"><div class="panel-head"><div><span class="label">02 / MACHINE SETTINGS</span><h3>Operator console</h3></div><div class="status"><i></i>LOCAL</div></div><div class="form-grid"><label>Rotor order <input id="rotors" value="I II III" spellcheck="false"></label><label>Reflector <select id="reflector"><option>B</option><option>C</option></select></label><label>Start positions <input id="positions" value="AAA" maxlength="4"></label><label>Ring settings <input id="rings" value="AAA" maxlength="4"></label><label class="wide">Plugboard pairs <input id="plugs" value="AV BS CG DL FU HZ IN KM OW RX" spellcheck="false"><small>Leave empty for the commercial model. Use space-separated pairs.</small></label></div><div class="cipher-box"><label>Message <textarea id="plaintext" rows="3">THE EAGLE HAS LANDED</textarea></label><button id="encrypt">ENCIPHER <span>↗</span></button><label>Output <textarea id="ciphertext" rows="3" readonly></textarea></label></div><div id="error" class="error"></div></div>
+    </section>
+    <section class="analysis"><div class="section-head"><span>03 / WHAT CHANGED</span><small>Keyspace is a count of configurations, not a claim of practical security.</small></div><div class="analysis-grid"><div class="panel facts"><h3 id="summary-title">Why the plugboard matters</h3><p id="summary">The Wehrmacht revision adds the front Steckerbrett. From 1939, operators received five rotors and selected three.</p><div class="facts-row"><div><span>ROTOR ORDERINGS</span><strong id="order-count">60</strong></div><div><span>PLUGBOARD SETTINGS</span><strong id="plug-count">532,985,208,200,576</strong></div><div><span>TOTAL CONFIGURATIONS</span><strong id="total-count">—</strong></div></div></div><div class="panel mechanism"><h3>The signal path</h3><div class="path"><span>KEY</span><b>→</b><span>PLUGBOARD</span><b>→</b><span>ROTORS</span><b>↩</b><span>REFLECTOR</span><b>→</b><span>LAMP</span></div><p>Every key press steps the fast rotor before the electrical path is evaluated. The reflector sends the signal back through the wheels, making the transformation reciprocal.</p></div></div></section>
+    <footer><div><b>ROTOR LAB</b> · An independent educational reconstruction</div><div>Inspired by science communication; no Veritasium logos or assets are used.</div></footer>
+  </main>
+  <script src="/static/js/three.min.js"></script><script src="/static/js/app.js"></script>
+</body></html>
